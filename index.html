@@ -1579,6 +1579,19 @@
             window.addEventListener('scroll', updateActiveNavLink);
         }
 
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    const response = await fetch("http://127.0.0.1:8000/contact", {
+        method: "POST",
+        body: formData
+    });
+
+    const result = await response.json();
+    alert(result.message); // show success message
+});
         function updateActiveNavLink() {
             const sections = document.querySelectorAll('section[id]');
             const scrollPosition = window.scrollY + 100;
