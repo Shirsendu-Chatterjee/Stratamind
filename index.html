@@ -1365,7 +1365,7 @@
                         <li><i class="fas fa-check"></i> Email Support</li>
                         <li><i class="fas fa-check"></i> Standard Integration</li>
                     </ul>
-                    <button class="btn btn-outline">Contact Sales</button>
+                    <button class="btn btn-outline scroll-to-contact">Contact Sales</button>
                 </div>
 
                 <div class="pricing-card featured">
@@ -1386,7 +1386,7 @@
                         <li><i class="fas fa-check"></i> RAG/QnA System</li>
                         <li><i class="fas fa-check"></i> Analytics Dashboard</li>
                     </ul>
-                    <button class="btn btn-primary">Contact Sales</button>
+                    <button class="btn btn-outline scroll-to-contact">Contact Sales</button>
                 </div>
 
                 <div class="pricing-card">
@@ -1405,7 +1405,7 @@
                         <li><i class="fas fa-check"></i> On-premise Deployment</li>
                         <li><i class="fas fa-check"></i> SLA Guarantee</li>
                     </ul>
-                    <button class="btn btn-outline">Contact Sales</button>
+                    <button class="btn btn-outline scroll-to-contact">Contact Sales</button>
                 </div>
             </div>
         </div>
@@ -2034,6 +2034,30 @@ async function uploadKnowledge() {
 
         // Initialize reveal on load
         document.addEventListener('DOMContentLoaded', revealOnScroll);
+          function initializeContactScroll() {
+            const scrollButtons = document.querySelectorAll('.scroll-to-contact');
+            
+            scrollButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Scroll to contact section
+                    const contactSection = document.querySelector('#contact');
+                    if (contactSection) {
+                        contactSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Call this function in your DOMContentLoaded event listener
+        document.addEventListener('DOMContentLoaded', function() {
+            // ... other initialization calls ...
+            initializeContactScroll();
+        });
     </script>
 </body>
 </html>
