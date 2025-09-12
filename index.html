@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StrataMind - AI-Powered Solutions</title>
+    <title>StrataMind - AI-Powered Automation Solutions</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
         * {
@@ -16,18 +16,15 @@
 
         html {
             scroll-behavior: smooth;
-            /* Prevent white flash on scroll */
             -webkit-overflow-scrolling: touch;
         }
 
         body {
             font-family: 'Exo 2', sans-serif;
-            /* Changed to solid black background */
             background: #000000;
             color: #ffffff;
             overflow-x: hidden;
             position: relative;
-            /* Prevent white flash on scroll */
             -webkit-tap-highlight-color: transparent;
             -webkit-touch-callout: none;
             -webkit-text-size-adjust: 100%;
@@ -124,7 +121,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.95); /* Darker background */
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             z-index: 1000;
@@ -230,7 +227,6 @@
         .section-subtitle {
             text-align: center;
             font-size: 1.2rem;
-            /* Brighter text */
             color: #e0e0e0;
             margin-bottom: 3rem;
         }
@@ -262,7 +258,7 @@
 
         .hero-title {
             font-family: 'Orbitron', monospace;
-            font-size: 4rem;
+            font-size: 3.5rem;
             font-weight: 900;
             line-height: 1.2;
             margin-bottom: 1.5rem;
@@ -275,24 +271,9 @@
             background-clip: text;
         }
 
-        .typing-text {
-            position: relative;
-        }
-
-        .typing-text::after {
-            content: '|';
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
-
         .hero-description {
             font-size: 1.2rem;
             line-height: 1.8;
-            /* Brighter text */
             color: #e0e0e0;
             margin-bottom: 2rem;
         }
@@ -300,6 +281,7 @@
         .hero-buttons {
             display: flex;
             gap: 1rem;
+            margin-top: 2rem;
         }
 
         .btn {
@@ -327,7 +309,7 @@
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.6s ease;
-            will-change: transform; /* Prevent white flash */
+            will-change: transform;
         }
 
         .btn:hover::before {
@@ -419,22 +401,20 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Services Section */
-        .services {
+        /* Pain Points Section */
+        .pain-points {
             padding: 100px 0;
-            /* Darker background */
             background: rgba(0, 0, 0, 0.3);
         }
 
-        .services-grid {
+        .pain-points-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
-        .service-card {
-            /* Brighter cards with more contrast */
+        .pain-card {
             background: rgba(255, 255, 255, 0.1);
             padding: 2rem;
             border-radius: 20px;
@@ -443,6 +423,255 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            text-align: center;
+        }
+
+        .pain-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 107, 157, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .pain-card:hover::before {
+            opacity: 1;
+            animation: shimmer 1.5s ease-in-out;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .pain-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 107, 157, 0.2);
+            border-color: #ff6b9d;
+        }
+
+        .pain-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #ff6b9d, #ff4b8b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+        }
+
+        .pain-icon i {
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .pain-card h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ff6b9d;
+        }
+
+        .pain-card p {
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Solution Section */
+        .solution {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .solution-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        .solution-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .solution-list li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .solution-list li::before {
+            content: '✓';
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .solution-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+            background: rgba(0, 212, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .stat-number {
+            display: block;
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+        }
+
+        /* Use Cases Section */
+        .use-cases {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .use-cases-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            color: #ffffff;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            border-color: #00d4ff;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .use-case-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 2rem;
+        }
+
+        .use-case-card h3 {
+            font-family: 'Orbitron', monospace;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .before, .after {
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .before {
+            background: rgba(255, 107, 157, 0.1);
+            border: 1px solid rgba(255, 107, 157, 0.2);
+        }
+
+        .after {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .before h4, .after h4 {
+            font-family: 'Orbitron', monospace;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .before h4 {
+            color: #ff6b9d;
+        }
+
+        .after h4 {
+            color: #00d4ff;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            height: 100%;
         }
 
         .service-card::before {
@@ -456,17 +685,11 @@
             transform: rotate(45deg);
             transition: all 0.6s ease;
             opacity: 0;
-            will-change: transform, opacity; /* Prevent white flash */
         }
 
         .service-card:hover::before {
             opacity: 1;
             animation: shimmer 1.5s ease-in-out;
-        }
-
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         .service-card:hover {
@@ -476,19 +699,19 @@
         }
 
         .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(45deg, #00d4ff, #ff6b9d);
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
+            margin: 0 auto 1.5rem;
             position: relative;
         }
 
         .service-icon i {
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: #ffffff;
         }
 
@@ -500,7 +723,6 @@
         }
 
         .service-card p {
-            /* Brighter text */
             color: #e0e0e0;
             line-height: 1.6;
             margin-bottom: 1.5rem;
@@ -508,196 +730,22 @@
 
         .service-features {
             list-style: none;
+            text-align: left;
         }
 
         .service-features li {
-            color: #ffffff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .service-features li::before {
-            content: '✦';
-            color: #00d4ff;
-            font-weight: bold;
-        }
-
-        /* Demo Section */
-        .demo {
-            padding: 100px 0;
-            /* Darker background */
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        .demo-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .demo-status {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .status-indicator {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
+            color: #e0e0e0;
             font-size: 0.9rem;
         }
 
-        .status-indicator.connected {
-            background: rgba(0, 255, 136, 0.2);
+        .service-features li::before {
+            content: '▶';
             color: #00ff88;
-        }
-
-        .status-indicator.error {
-            background: rgba(255, 107, 157, 0.2);
-            color: #ff6b9d;
-        }
-
-        .demo-section {
-            /* Brighter cards */
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .demo-section h3 {
-            font-family: 'Orbitron', monospace;
-            color: #00d4ff;
-            margin-bottom: 1rem;
-        }
-
-        .upload-area {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        #knowledge-input {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            color: #ffffff;
-            font-family: inherit;
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        #knowledge-input::placeholder {
-            color: #aaa;
-        }
-
-        #knowledge-input:focus {
-            outline: none;
-            border-color: #00d4ff;
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-        }
-
-        .chat-section {
-            /* Brighter cards */
-            background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .chat-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .chat-messages {
-            min-height: 300px;
-            max-height: 400px;
-            overflow-y: auto;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .message {
-            margin-bottom: 1rem;
-            padding: 0.8rem;
-            border-radius: 10px;
-            animation: slideInUp 0.3s ease;
-        }
-
-        @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .message.user {
-            background: rgba(0, 212, 255, 0.2);
-            border-left: 3px solid #00d4ff;
-        }
-
-        .message.ai {
-            background: rgba(255, 107, 157, 0.2);
-            border-left: 3px solid #ff6b9d;
-        }
-
-        .message.system {
-            background: rgba(255, 255, 255, 0.1);
-            border-left: 3px solid #888;
-            font-style: italic;
-        }
-
-        .message-sender {
-            font-weight: bold;
-            margin-bottom: 0.3rem;
-        }
-
-        .message.user .message-sender {
-            color: #00d4ff;
-        }
-
-        .message.ai .message-sender {
-            color: #ff6b9d;
-        }
-
-        .chat-input-container {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        #question-input {
-            flex: 1;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            color: #ffffff;
-            font-family: inherit;
-        }
-
-        #question-input::placeholder {
-            color: #aaa;
-        }
-
-        #question-input:focus {
-            outline: none;
-            border-color: #00d4ff;
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-        }
-
-        #send-btn {
-            padding: 1rem;
-            border-radius: 50%;
-            aspect-ratio: 1;
+            font-size: 0.8rem;
         }
 
         /* Pricing Section */
@@ -767,7 +815,7 @@
 
         .amount {
             font-family: 'Orbitron', monospace;
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: 700;
             color: #ffffff;
             margin: 0 0.2rem;
@@ -804,157 +852,265 @@
             box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
         }
 
-        /* About Section */
-        .about {
+        /* Trust Section */
+        .trust {
             padding: 100px 0;
-            /* Darker background */
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
         }
 
-        .about-content {
+        .testimonials {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            /* Brighter text */
-            color: #e0e0e0;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
-        .stat {
-            text-align: center;
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
-        .stat-number {
-            display: block;
-            font-family: 'Orbitron', monospace;
-            font-size: 2.5rem;
-            font-weight: 700;
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00d4ff, #ff6b9d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .author-details h4 {
             color: #00d4ff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.2rem;
         }
 
-        .stat-label {
-            /* Brighter text */
+        .author-details p {
             color: #e0e0e0;
             font-size: 0.9rem;
         }
 
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+        .logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 4rem;
         }
 
-        .tech-item {
-            width: 80px;
-            height: 80px;
-            /* Brighter cards */
+        .logo-item {
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            filter: grayscale(100%);
+            width: 120px;
+            height: 60px;
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: #00d4ff;
-            transition: all 0.3s ease;
         }
 
-        .tech-item:hover {
-            background: rgba(0, 212, 255, 0.2);
-            transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        .logo-item:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-subtitle {
+            font-size: 1.2rem;
+            color: #e0e0e0;
+            margin-bottom: 2rem;
         }
 
         /* Contact Section */
         .contact {
             padding: 100px 0;
-            /* Darker background */
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            margin-top: 3rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            padding: 2rem 0;
+        }
+
+        .contact-info h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            color: #00d4ff;
+            margin-bottom: 1rem;
+        }
+
+        .contact-subtitle {
+            color: #e0e0e0;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .contact-details {
+            margin-bottom: 3rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            transition: all 0.3s ease;
         }
 
-        .contact-item i {
-            width: 50px;
-            height: 50px;
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+
+        .contact-item-icon {
+            width: 60px;
+            height: 60px;
             background: linear-gradient(45deg, #00d4ff, #ff6b9d);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
             color: #ffffff;
+            font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
-        .contact-item h4 {
+        .contact-item-info h4 {
             color: #00d4ff;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.2rem;
         }
 
-        .contact-item p {
-            /* Brighter text */
+        .contact-item-info p {
             color: #e0e0e0;
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.4;
         }
 
         .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
         }
 
-        .form-group input,
-        .form-group textarea {
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #00d4ff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
             width: 100%;
             padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
             color: #ffffff;
-            font-family: inherit;
-            font-size: 1rem;
+            font-family: 'Exo 2', sans-serif;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
         }
 
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: #aaa;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
+        .form-control:focus {
             outline: none;
             border-color: #00d4ff;
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+            background: rgba(0, 0, 0, 0.5);
         }
 
-        .form-group textarea {
-            resize: vertical;
+        .form-control::placeholder {
+            color: #888;
+        }
+
+        textarea.form-control {
             min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            color: #ffffff;
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
         }
 
         /* Footer */
@@ -977,45 +1133,270 @@
             font-size: 1.2rem;
             font-weight: 700;
             color: #00d4ff;
-            will-change: transform; /* Prevent white flash */
         }
 
         .footer-logo i {
             margin-right: 0.5rem;
+            color: #00d4ff;
         }
 
         .footer p {
-            /* Brighter text */
             color: #e0e0e0;
             font-size: 0.9rem;
         }
 
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
+        /* Chatbot Widget Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.6);
+        }
+
+        .chatbot-button i {
+            font-size: 24px;
+        }
+
+        .chat-window {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            height: 450px;
+            background: rgba(10, 15, 30, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 5px 35px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            transform: translateY(10px);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .chat-window.active {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .chat-header {
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-header h3 {
+            margin: 0;
+            font-family: 'Orbitron', monospace;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chat-header .status {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+        }
+
+        .status-dot {
             width: 8px;
+            height: 8px;
+            background: #00ff88;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse 2s infinite;
         }
 
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
+        .close-chat {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(45deg, #00d4ff, #ff6b9d);
-            border-radius: 4px;
+        .chat-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, #ff6b9d, #00d4ff);
+        .message {
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 80%;
+            animation: fadeIn 0.3s ease;
+            line-height: 1.4;
         }
 
-        /* Loading animations */
-        .loading {
-            animation: pulse 1.5s ease-in-out infinite;
+        .message.bot {
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+        .message.user {
+            background: rgba(255, 107, 157, 0.15);
+            border: 1px solid rgba(255, 107, 157, 0.3);
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .message.error {
+            background: rgba(255, 50, 50, 0.15);
+            border: 1px solid rgba(255, 50, 50, 0.3);
+            align-self: center;
+            text-align: center;
+            max-width: 90%;
+            font-size: 0.9rem;
+        }
+
+        .chat-input {
+            padding: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            gap: 10px;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .chat-input input:focus {
+            outline: none;
+            border-color: #00d4ff;
+        }
+
+        .chat-input button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .chat-input button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 212, 255, 0.4);
+        }
+
+        .chat-input button:disabled {
+            background: rgba(255, 255, 255, 0.2);
+            cursor: not-allowed;
+        }
+
+        /* Typing indicator */
+        .typing-indicator {
+            display: none;
+            align-self: flex-start;
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 18px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+        }
+
+        .typing-indicator span {
+            height: 8px;
+            width: 8px;
+            background: #00d4ff;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 2px;
+            animation: typing 1s infinite;
+        }
+
+        .typing-indicator span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-indicator span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typing {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* Quick replies */
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 10px 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .quick-reply {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 16px;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quick-reply:hover {
+            background: rgba(0, 212, 255, 0.2);
+        }
+
+        /* Scroll reveal animations */
+        .service-card,
+        .pricing-card,
+        .tech-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .service-card.revealed,
+        .pricing-card.revealed,
+        .tech-item.revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Responsive Design */
@@ -1054,6 +1435,32 @@
                 font-size: 2rem;
             }
             
+            .solution-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .solution-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
             .services-grid {
                 grid-template-columns: 1fr;
             }
@@ -1062,23 +1469,16 @@
                 grid-template-columns: 1fr;
             }
             
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .pricing-card.featured {
+                transform: scale(1);
             }
             
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .logos {
+                gap: 1.5rem;
             }
             
-            .about-stats {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .logo-item {
+                width: 100px;
             }
             
             .footer-content {
@@ -1092,11 +1492,9 @@
                 align-items: center;
             }
             
-            /* Mobile-specific fixes */
             .hero {
                 padding: 100px 0 30px;
                 min-height: auto;
-                overflow: hidden;
             }
             
             .hero-visual {
@@ -1119,23 +1517,53 @@
             }
             
             .floating-robots {
-                display: none; /* Hide robots on mobile for better performance */
+                display: none;
             }
-        }
-
-        /* Fix for white flash on scroll */
-        .service-card,
-        .pricing-card,
-        .tech-item {
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            perspective: 1000px;
-        }
-
-        /* Prevent content shift when scrollbar appears */
-        html {
-            overflow-x: hidden;
-            margin-right: calc(-1 * (100vw - 100%));
+            
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .contact-info {
+                padding: 1rem 0;
+            }
+            
+            /* Chatbot Responsive */
+            .chatbot-container {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .chat-window {
+                width: 320px;
+                right: -20px;
+            }
+            
+            .chat-header h3 {
+                font-size: 1rem;
+            }
+            
+            .chat-messages {
+                padding: 10px;
+            }
+            
+            .message {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .chat-input {
+                padding: 10px;
+            }
+            
+            .chat-input input {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+            
+            .chat-input button {
+                padding: 8px 15px;
+            }
         }
     </style>
 </head>
@@ -1157,10 +1585,12 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#pain-points" class="nav-link">Problems</a></li>
+                <li><a href="#solution" class="nav-link">Solution</a></li>
+                <li><a href="#use-cases" class="nav-link">Use Cases</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#demo" class="nav-link">Demo</a></li>
                 <li><a href="#pricing" class="nav-link">Pricing</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#trust" class="nav-link">Proof</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -1171,26 +1601,27 @@
         </div>
     </nav>
 
-    <!-- Home Section -->
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div>
                 <h1 class="hero-title">
-                    <span class="gradient-text">AI-Powered</span><br>
-                    <span class="typing-text">Intelligence Solutions</span>
+                    <span class="gradient-text">Stop Wasting Time</span><br>
+                    On Repetitive Tasks
                 </h1>
                 <p class="hero-description">
-                    Transform your business with cutting-edge artificial intelligence. 
-                    From conversational AI to advanced RAG systems, we bring the future to you.
+                    Let AI agents handle the busywork while you focus on what matters. 
+                    We help startups, educators, and businesses automate tasks, save costs, 
+                    and scale faster with custom AI solutions.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#demo" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Try Demo
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-robot"></i>
+                        Get a Free AI Audit
                     </a>
-                    <a href="#services" class="btn btn-secondary">
-                        <i class="fas fa-info-circle"></i>
-                        Learn More
+                    <a href="#demo" class="btn btn-secondary">
+                        <i class="fas fa-play-circle"></i>
+                        Watch Demo
                     </a>
                 </div>
             </div>
@@ -1203,141 +1634,246 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Pain Points Section -->
+    <section id="pain-points" class="pain-points">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="section-subtitle">Cutting-edge AI solutions tailored for your business</p>
+            <h2 class="section-title">Are You Facing These Challenges?</h2>
+            <p class="section-subtitle">These common problems are holding businesses back from reaching their full potential</p>
             
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-comments"></i>
+            <div class="pain-points-grid">
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i class="fas fa-clock"></i>
                     </div>
-                    <h3>AI Chatbots</h3>
-                    <p>Intelligent conversational agents that understand context and provide human-like interactions</p>
-                    <ul class="service-features">
-                        <li>Natural Language Processing</li>
-                        <li>Multi-language Support</li>
-                        <li>24/7 Availability</li>
-                    </ul>
+                    <h3>Time-Consuming Tasks</h3>
+                    <p>Spending hours on repetitive work that could be automated, taking you away from strategic priorities.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search"></i>
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i class="fas fa-headset"></i>
                     </div>
-                    <h3>RAG/QnA Systems</h3>
-                    <p>Retrieval-Augmented Generation for accurate, context-aware question answering</p>
-                    <ul class="service-features">
-                        <li>Document Intelligence</li>
-                        <li>Real-time Answers</li>
-                        <li>Knowledge Integration</li>
-                    </ul>
+                    <h3>24/7 Support Demands</h3>
+                    <p>Struggling to handle customer inquiries around the clock without burning out your team.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i class="fas fa-bolt"></i>
                     </div>
-                    <h3>Custom AI Solutions</h3>
-                    <p>Bespoke artificial intelligence systems designed for your specific needs</p>
-                    <ul class="service-features">
-                        <li>Tailored Algorithms</li>
-                        <li>Integration Support</li>
-                        <li>Scalable Architecture</li>
-                    </ul>
-                </div>  
+                    <h3>Missed Opportunities</h3>
+                    <p>Losing leads and sales due to slow response times and inability to scale customer interactions.</p>
+                </div>
 
-<!--                 yha  -->
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>High Operational Costs</h3>
+                    <p>Labor expenses eating into your profits, making it difficult to compete and grow.</p>
+                </div>
 
-<!--                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>Custom AI Solutions</h3>
-                    <p>Bespoke artificial intelligence systems designed for your specific needs</p>
-                    <ul class="service-features">
-                        <li>Tailored Algorithms</li>
-                        <li>Integration Support</li>
-                        <li>Scalable Architecture</li>
-                    </ul>
-                </div>  
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
+                    <h3>Scaling Limitations</h3>
+                    <p>Difficulty expanding your team and operations without proportional increases in overhead.</p>
+                </div>
+
+                <div class="pain-card">
+                    <div class="pain-icon">
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <h3>Custom AI Solutions</h3>
-                    <p>Bespoke artificial intelligence systems designed for your specific needs</p>
-                    <ul class="service-features">
-                        <li>Tailored Algorithms</li>
-                        <li>Integration Support</li>
-                        <li>Scalable Architecture</li>
-                    </ul>
-                </div>  
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Custom AI Solutions</h3>
-                    <p>Bespoke artificial intelligence systems designed for your specific needs</p>
-                    <ul class="service-features">
-                        <li>Tailored Algorithms</li>
-                        <li>Integration Support</li>
-                        <li>Scalable Architecture</li>
-                    </ul>
-                </div>   -->
-<!--                 tehr -->
+                    <h3>Knowledge Management</h3>
+                    <p>Critical information scattered across documents, emails, and team members' heads.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Demo Section -->
-    <section id="demo" class="demo">
+    <!-- Solution Section -->
+    <section id="solution" class="solution">
         <div class="container">
-            <h2 class="section-title">Live Demo</h2>
-            <p class="section-subtitle">Experience our RAG/QnA system in action</p>
-            
-            <div class="demo-container">
-                <div class="demo-status">
-                    <div id="backend-status" class="status-indicator">
-                        <i class="fas fa-spinner fa-spin"></i>
-                        <span>Connecting to backend...</span>
-                    </div>
+            <div class="solution-content">
+                <div>
+                    <h2 class="section-title">How Our AI Solutions Transform Your Business</h2>
+                    <p class="solution-text">
+                        Our custom AI agents and automation systems are designed to tackle your specific challenges head-on, 
+                        delivering measurable results from day one.
+                    </p>
+                    
+                    <ul class="solution-list">
+                        <li>Automate repetitive tasks and free up your team for strategic work</li>
+                        <li>Provide instant, 24/7 customer support with AI chatbots</li>
+                        <li>Capture and qualify leads even when you're asleep</li>
+                        <li>Reduce operational costs by up to 70%</li>
+                        <li>Scale your operations without proportional increase in costs</li>
+                        <li>Centralize knowledge and make it instantly accessible</li>
+                    </ul>
                 </div>
-
-                <div class="demo-section">
-                    <h3>Upload Knowledge Base</h3>
-                    <div class="upload-area">
-                        <textarea 
-                            id="knowledge-input" 
-                            placeholder="Paste your knowledge text here (documents, articles, etc.)..."
-                            rows="6"
-                        ></textarea>
-                        <button id="upload-btn" class="btn btn-primary">
-                            <i class="fas fa-upload"></i>
-                            Upload Knowledge
-                        </button>
-                    </div>
-                </div>
-
-                <div class="chat-section">
-                    <h3>Ask Questions</h3>
-                    <div class="chat-container">
-                        <div id="chat-messages" class="chat-messages"></div>
-                        <div class="chat-input-container">
-                            <input 
-                                type="text" 
-                                id="question-input" 
-                                placeholder="Ask any question about the uploaded knowledge..."
-                                maxlength="500"
-                            >
-                            <button id="send-btn" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
+                
+                <div>
+                    <div class="solution-stats">
+                        <div class="stat">
+                            <span class="stat-number">70%</span>
+                            <span class="stat-label">Cost Reduction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Availability</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3x</span>
+                            <span class="stat-label">Faster Response</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50%</span>
+                            <span class="stat-label">Time Saved</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="use-cases">
+        <div class="container">
+            <h2 class="section-title">See How We Help Different Industries</h2>
+            <p class="section-subtitle">Tailored solutions for your specific business needs</p>
+            
+            <div class="use-cases-tabs">
+                <button class="tab-btn active" data-tab="startups">Startups</button>
+                <button class="tab-btn" data-tab="educators">Educators</button>
+                <button class="tab-btn" data-tab="agencies">Agencies</button>
+            </div>
+            
+            <div class="tab-content active" id="startups-tab">
+                <div class="use-case-card">
+                    <h3><i class="fas fa-rocket"></i> Startup Growth Acceleration</h3>
+                    <p>Early-stage companies need to move fast and maximize limited resources. Our AI solutions help startups punch above their weight.</p>
+                    
+                    <div class="before-after">
+                        <div class="before">
+                            <h4><i class="fas fa-times-circle"></i> Before</h4>
+                            <p>Founders stretched thin handling admin, support, and sales manually. Slow response times costing leads. Limited bandwidth for strategic growth.</p>
+                        </div>
+                        <div class="after">
+                            <h4><i class="fas fa-check-circle"></i> After</h4>
+                            <p>AI handles customer onboarding, support, and lead qualification. Founders focus on product and strategy. 24/7 availability without additional hires.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="educators-tab">
+                <div class="use-case-card">
+                    <h3><i class="fas fa-graduation-cap"></i> Educational Efficiency</h3>
+                    <p>Educators and institutions need to focus on teaching, not administrative tasks. Our AI solutions handle the busywork.</p>
+                    
+                    <div class="before-after">
+                        <div class="before">
+                            <h4><i class="fas fa-times-circle"></i> Before</h4>
+                            <p>Hours spent grading, answering repetitive questions, and managing schedules. Less time for actual teaching and student engagement.</p>
+                        </div>
+                        <div class="after">
+                            <h4><i class="fas fa-check-circle"></i> After</h4>
+                            <p>AI assistants handle grading, answer student questions instantly, and manage scheduling. Educators reclaim time for impactful teaching.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="agencies-tab">
+                <div class="use-case-card">
+                    <h3><i class="fas fa-briefcase"></i> Agency Scalability</h3>
+                    <p>Creative and marketing agencies need to deliver consistent results while managing multiple clients and deadlines.</p>
+                    
+                    <div class="before-after">
+                        <div class="before">
+                            <h4><i class="fas fa-times-circle"></i> Before</h4>
+                            <p>Juggling multiple clients leads to burnout. Manual reporting and client communication eat into billable hours. Difficulty scaling efficiently.</p>
+                        </div>
+                        <div class="after">
+                            <h4><i class="fas fa-check-circle"></i> After</h4>
+                            <p>AI agents generate reports, manage client communications, and handle routine tasks. Teams focus on creative work. Ability to scale without proportional overhead.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our AI-Powered Services</h2>
+            <p class="section-subtitle">Comprehensive solutions tailored to your industry needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Streamline healthcare operations with intelligent automation for better patient care and operational efficiency.</p>
+                    <ul class="service-features">
+                        <li>Automated appointment scheduling and reminders</li>
+                        <li>Patient data management and analysis</li>
+                        <li>Insurance claim processing automation</li>
+                        <li>Medical record digitization and search</li>
+                        <li>Prescription management systems</li>
+                        <li>Telemedicine platform integration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Education</h3>
+                    <p>Enhance learning experiences with AI-driven educational tools and automated administrative processes.</p>
+                    <ul class="service-features">
+                        <li>Deep research assistance and fact-checking</li>
+                        <li>Instant question answering systems</li>
+                        <li>Automated grading and feedback</li>
+                        <li>Personalized learning path recommendations</li>
+                        <li>Student performance analytics</li>
+                        <li>Virtual tutoring and study assistants</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Legal</h3>
+                    <p>Transform legal practice with AI-powered document analysis, research, and client interaction systems.</p>
+                    <ul class="service-features">
+                        <li>Legal document analysis and review</li>
+                        <li>Case law research and precedent finding</li>
+                        <li>Contract generation and compliance checking</li>
+                        <li>Legal chatbot for client inquiries</li>
+                        <li>Court filing automation</li>
+                        <li>Client case management systems</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Marketing</h3>
+                    <p>Revolutionize your marketing efforts with intelligent automation and data-driven insights.</p>
+                    <ul class="service-features">
+                        <li>Automated advertisement creation and optimization</li>
+                        <li>Social media content generation and scheduling</li>
+                        <li>Customer segmentation and targeting</li>
+                        <li>Email marketing automation</li>
+                        <li>Performance analytics and reporting</li>
+                        <li>Lead scoring and nurturing systems</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -1355,17 +1891,17 @@
                         <h3>Starter</h3>
                         <div class="price">
                             <span class="currency">$</span>
-                            <span class="amount">99-329</span>
+                            <span class="amount">99</span>
                             <span class="period">/month</span>
                         </div>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> No Code AI Chatbot</li>
+                        <li><i class="fas fa-check"></i> Basic AI Chatbot</li>
                         <li><i class="fas fa-check"></i> 1,000 queries/month</li>
                         <li><i class="fas fa-check"></i> Email Support</li>
                         <li><i class="fas fa-check"></i> Standard Integration</li>
                     </ul>
-                    <button class="btn btn-outline scroll-to-contact">Contact Sales</button>
+                    <button class="btn btn-outline">Get Started</button>
                 </div>
 
                 <div class="pricing-card featured">
@@ -1374,19 +1910,19 @@
                         <h3>Professional</h3>
                         <div class="price">
                             <span class="currency">$</span>
-                            <span class="amount">519</span>
-                            <span class="period">/One Time</span>
+                            <span class="amount">299</span>
+                            <span class="period">/month</span>
                         </div>
                     </div>
                     <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Advanced AI Systems(With Code)</li>
-<!--                         <li><i class="fas fa-check"></i> 10,000 queries/month</li> -->
+                        <li><i class="fas fa-check"></i> Advanced AI Systems</li>
+                        <li><i class="fas fa-check"></i> 10,000 queries/month</li>
                         <li><i class="fas fa-check"></i> Priority Support</li>
                         <li><i class="fas fa-check"></i> Custom Integration</li>
                         <li><i class="fas fa-check"></i> RAG/QnA System</li>
                         <li><i class="fas fa-check"></i> Analytics Dashboard</li>
                     </ul>
-                    <button class="btn btn-outline scroll-to-contact">Contact Sales</button>
+                    <button class="btn btn-primary">Get Started</button>
                 </div>
 
                 <div class="pricing-card">
@@ -1394,64 +1930,94 @@
                         <h3>Enterprise</h3>
                         <div class="price">
                             <span class="currency">$</span>
-                            <span class="amount">749-999</span>
-                            <span class="period">/One Time</span>
+                            <span class="amount">999</span>
+                            <span class="period">/month</span>
                         </div>
                     </div>
                     <ul class="pricing-features">
                         <li><i class="fas fa-check"></i> Custom AI Solutions</li>
+                        <li><i class="fas fa-check"></i> Unlimited queries</li>
                         <li><i class="fas fa-check"></i> 24/7 Dedicated Support</li>
                         <li><i class="fas fa-check"></i> Full Customization</li>
                         <li><i class="fas fa-check"></i> On-premise Deployment</li>
                         <li><i class="fas fa-check"></i> SLA Guarantee</li>
                     </ul>
-                    <button class="btn btn-outline scroll-to-contact">Contact Sales</button>
+                    <button class="btn btn-outline">Contact Sales</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Trust Section -->
+    <section id="trust" class="trust">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2 class="section-title">About StrataMind</h2>
-                    <p class="about-description">
-                        StrataMind is at the forefront of artificial intelligence innovation, 
-                        specializing in developing cutting-edge AI solutions that transform 
-                        how businesses interact with data and customers.
+            <h2 class="section-title">Trusted By Forward-Thinking Businesses</h2>
+            <p class="section-subtitle">See what our clients say about transforming their operations with AI</p>
+            
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "Since implementing StrataMind's AI solutions, we've reduced response time from hours to seconds and cut operational costs by 65%. Our team can now focus on innovation instead of busywork."
                     </p>
-                    <p class="about-description">
-                        Our team of AI experts and engineers work tirelessly to create 
-                        intelligent systems that not only understand your business needs 
-                        but evolve with them, ensuring you stay ahead in the digital age.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">50+</span>
-                            <span class="stat-label">Projects Completed</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">Client Satisfaction</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Support Available</span>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-details">
+                            <h4>Jane Doe</h4>
+                            <p>CEO, StartupX</p>
                         </div>
                     </div>
                 </div>
-                <div class="about-visual">
-                    <div class="tech-grid">
-                        <div class="tech-item"><i class="fab fa-python"></i></div>
-                        <div class="tech-item"><i class="fas fa-brain"></i></div>
-                        <div class="tech-item"><i class="fas fa-robot"></i></div>
-                        <div class="tech-item"><i class="fas fa-microchip"></i></div>
-                        <div class="tech-item"><i class="fas fa-network-wired"></i></div>
-                        <div class="tech-item"><i class="fas fa-chart-line"></i></div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "The AI chatbot we deployed handles 80% of our customer inquiries without human intervention. Our satisfaction scores increased by 40% while reducing support costs significantly."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JS</div>
+                        <div class="author-details">
+                            <h4>John Smith</h4>
+                            <p>CTO, TechCorp</p>
+                        </div>
                     </div>
                 </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "As an educator, StrataMind's AI assistant has been transformative. It handles routine questions, schedules, and even helps with grading. I've reclaimed 15 hours per week for actual teaching."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AS</div>
+                        <div class="author-details">
+                            <h4>Dr. Sarah Adams</h4>
+                            <p>Professor, University</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="logos">
+                <div class="logo-item">Client Logo 1</div>
+                <div class="logo-item">Client Logo 2</div>
+                <div class="logo-item">Client Logo 3</div>
+                <div class="logo-item">Client Logo 4</div>
+                <div class="logo-item">Client Logo 5</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="cta" class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">The Future is Automated. Don't Get Left Behind.</h2>
+                <p class="cta-subtitle">
+                    Join hundreds of businesses already transforming their operations with AI. 
+                    Get started with a free consultation and AI audit of your business processes.
+                </p>
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-calendar-check"></i>
+                    Book a Free Demo Now
+                </a>
             </div>
         </div>
     </section>
@@ -1464,46 +2030,72 @@
             
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>stratamind.official@gmail.com</p>
+                    <h3>Get In Touch</h3>
+                    <p class="contact-subtitle">Ready to transform your business with AI? Let's talk!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-item-info">
+                                <h4>Email</h4>
+                                <p>stratamind.official@gmail.com</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
-                            <p>+91 8009497072</p>
-                            <p>+91 9793910504</p>
-                            <p>+91 7061970690</p>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-item-info">
+                                <h4>Phone</h4>
+                                <p>+91 8009497072<br>
+                                +91 9793910504<br>
+                                +91 7061970690</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Location</h4>
-                            <p>Bhopal , India</p>
+
+                        <div class="contact-item">
+                            <div class="contact-item-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-item-info">
+                                <h4>Location</h4>
+                                <p>India</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <form class="contact-form" id="contact-form">
-    <div class="form-group">
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-    </div>
-    <div class="form-group">
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-    </div>
-    <div class="form-group">
-        <textarea id="message" name="message" placeholder="Your Message" rows="6" required></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">
-        <i class="fas fa-paper-plane"></i>
-        Send Message
-    </button>
-</form>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -1516,486 +2108,97 @@
                     <i class="fas fa-brain"></i>
                     <span>StrataMind</span>
                 </div>
-                <p>&copy; 2024 StrataMind. All rights reserved. | Powered by AI Innovation</p>
+                <p>&copy; 2023 StrataMind. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Backend Configuration
-        const BACKEND_URL = "https://stratamind-stratamind.hf.space";
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container">
+        <button class="chatbot-button">
+            <i class="fas fa-comments"></i>
+        </button>
+        
+        <div class="chat-window">
+            <div class="chat-header">
+                <h3><i class="fas fa-robot"></i> StrataMind AI</h3>
+                <div class="status">
+                    <span class="status-dot"></span>
+                    <span>Online</span>
+                </div>
+                <button class="close-chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="chat-messages">
+                <div class="message bot">
+                    Hello! I'm StrataMind AI assistant. How can I help you today?
+                </div>
+                <div class="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="quick-replies">
+                <div class="quick-reply">What services do you offer?</div>
+                <div class="quick-reply">How can AI help my business?</div>
+                <div class="quick-reply">Book a consultation</div>
+            </div>
+            
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message..." id="user-input">
+                <button id="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
-        // DOM Elements
+    <script>
+        // Mobile Navigation
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const backendStatus = document.getElementById('backend-status');
-        const knowledgeInput = document.getElementById('knowledge-input');
-        const uploadBtn = document.getElementById('upload-btn');
-        const chatMessages = document.getElementById('chat-messages');
-        const questionInput = document.getElementById('question-input');
-        const sendBtn = document.getElementById('send-btn');
-        const contactForm = document.getElementById('contact-form');
 
-        // Initialize the application
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeNavigation();
-            initializeAnimations();
-            checkBackendConnection();
-            initializeDemoSection();
-            initializeContactForm();
-            initializeCursorFollower();
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
         });
 
-        // Navigation functionality
-        function initializeNavigation() {
-            // Mobile menu toggle
-            hamburger.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                hamburger.classList.toggle('active');
-            });
+        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        }));
 
-            // Smooth scrolling for navigation links
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    
-                    if (targetSection) {
-                        targetSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                    
-                    // Close mobile menu if open
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
-                });
-            });
+        // Use Cases Tabs
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
 
-            // Update active nav link on scroll
-            window.addEventListener('scroll', updateActiveNavLink);
-        }
-
-document.getElementById("contact-form").addEventListener("submit", async function(e) {
-    e.preventDefault();
-
-    const formData = new FormData(this);
-
-    const response = await fetch(`${BACKEND_URL}/contact`, {
-        method: "POST",
-        body: formData
-    });
-
-    const result = await response.json();
-    alert(result.message); // show success message
-});
-        function updateActiveNavLink() {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollPosition = window.scrollY + 100;
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                const correspondingLink = document.querySelector(`a[href="#${sectionId}"]`);
-
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    if (correspondingLink) {
-                        correspondingLink.classList.add('active');
-                    }
-                }
-            });
-        }
-
-        // Animation initialization
-        function initializeAnimations() {
-            // Typing animation for hero text
-            animateTypingText();
-            
-            // Intersection Observer for scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            // Observe sections for scroll animations
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(30px)';
-                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(section);
-            });
-        }
-
-        function animateTypingText() {
-            const typingElement = document.querySelector('.typing-text');
-            if (!typingElement) return;
-
-            const originalText = typingElement.textContent;
-            typingElement.textContent = '';
-            
-            let charIndex = 0;
-            const typingSpeed = 100;
-
-            function typeChar() {
-                if (charIndex < originalText.length) {
-                    typingElement.textContent += originalText.charAt(charIndex);
-                    charIndex++;
-                    setTimeout(typeChar, typingSpeed);
-                }
-            }
-
-            setTimeout(typeChar, 1000);
-        }
-
-        // Cursor follower for robot animations
-        function initializeCursorFollower() {
-            const robots = document.querySelectorAll('.robot');
-            let mouseX = 0;
-            let mouseY = 0;
-
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-            });
-
-            robots.forEach((robot, index) => {
-                let robotX = 0;
-                let robotY = 0;
-                const speed = 0.02 + (index * 0.01);
-
-                function animateRobot() {
-                    const deltaX = mouseX - robotX;
-                    const deltaY = mouseY - robotY;
-
-                    robotX += deltaX * speed;
-                    robotY += deltaY * speed;
-
-                    robot.style.left = robotX + 'px';
-                    robot.style.top = robotY + 'px';
-
-                    requestAnimationFrame(animateRobot);
-                }
-
-                animateRobot();
-            });
-        }
-
-        // Backend connection management
-        async function checkBackendConnection() {
-            const statusElement = backendStatus;
-            
-            try {
-                statusElement.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Connecting to backend...</span>';
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
                 
-                const response = await fetch(`${BACKEND_URL}/health`, {
-                    method: 'GET',
-                    headers: {
-                        'Accept': 'application/json',
-                    }
-                });
-
-                if (response.ok) {
-                    statusElement.innerHTML = '<i class="fas fa-check-circle"></i><span>Backend Connected</span>';
-                    statusElement.className = 'status-indicator connected';
-                    enableDemoControls(true);
-                } else {
-                    throw new Error(`HTTP ${response.status}`);
-                }
-            } catch (error) {
-                console.error('Backend connection error:', error);
-                statusElement.innerHTML = '<i class="fas fa-exclamation-triangle"></i><span>Backend Offline</span>';
-                statusElement.className = 'status-indicator error';
-                enableDemoControls(false);
+                // Add active class to clicked button
+                btn.classList.add('active');
                 
-                // Retry connection after 10 seconds
-                setTimeout(checkBackendConnection, 10000);
-            }
-        }
-
-        function enableDemoControls(enabled) {
-            const controls = [uploadBtn, sendBtn, questionInput, knowledgeInput];
-            controls.forEach(control => {
-                if (control) {
-                    control.disabled = !enabled;
-                    if (enabled) {
-                        control.classList.remove('disabled');
-                    } else {
-                        control.classList.add('disabled');
-                    }
-                }
+                // Show corresponding content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(`${tabId}-tab`).classList.add('active');
             });
-        }
-
-        // Demo section functionality
-        function initializeDemoSection() {
-            // Upload knowledge functionality
-            if (uploadBtn) {
-                uploadBtn.addEventListener('click', uploadKnowledge);
-            }
-
-            // Send question functionality
-            if (sendBtn) {
-                sendBtn.addEventListener('click', sendQuestion);
-            }
-
-            // Enter key support for question input
-            if (questionInput) {
-                questionInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter' && !e.shiftKey) {
-                        e.preventDefault();
-                        sendQuestion();
-                    }
-                });
-            }
-
-            // Auto-resize textarea
-            if (knowledgeInput) {
-                knowledgeInput.addEventListener('input', function() {
-                    this.style.height = 'auto';
-                    this.style.height = this.scrollHeight + 'px';
-                });
-            }
-        }
-let userId = null; // store session id
-
-async function uploadKnowledge() {
-    const text = knowledgeInput.value.trim();
-    
-    if (!text) {
-        addMessage('system', 'Please enter some knowledge text before uploading.');
-        return;
-    }
-
-    try {
-        uploadBtn.disabled = true;
-        uploadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Uploading...';
-
-        const blob = new Blob([text], { type: 'text/plain' });
-        const formData = new FormData();
-        formData.append('file', blob, 'knowledge.txt');
-
-        const response = await fetch(`${BACKEND_URL}/upload_text/`, {
-            method: 'POST',
-            body: formData
         });
 
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        addMessage('system', data.message || 'Knowledge uploaded successfully!');
-        
-        // ✅ Save the user_id returned by backend
-        userId = data.user_id;
-        console.log("Your session id:", userId);
-
-        knowledgeInput.value = '';
-        
-    } catch (error) {
-        console.error('Upload error:', error);
-        addMessage('system', `Upload failed: ${error.message}`);
-    } finally {
-        uploadBtn.disabled = false;
-        uploadBtn.innerHTML = '<i class="fas fa-upload"></i> Upload Knowledge';
-    }
-}
-
-
-   async function sendQuestion() {
-    const question = questionInput.value.trim();
-    
-    if (!question) {
-        return;
-    }
-    if (!userId) {
-        addMessage('system', '❌ Please upload knowledge first!');
-        return;
-    }
-
-    // Add user message
-    addMessage('user', question);
-    questionInput.value = '';
-
-    try {
-        sendBtn.disabled = true;
-        sendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
-
-        // Add typing indicator
-        const typingMessage = addMessage('ai', 'AI is thinking...');
-        typingMessage.classList.add('loading');
-
-        const formData = new FormData();
-        formData.append('user_id', userId);   // ✅ include session id
-        formData.append('question', question);
-
-        const response = await fetch(`${BACKEND_URL}/ask/`, {
-            method: 'POST',
-            body: formData
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-        }
-
-        const data = await response.json();
-        
-        typingMessage.remove(); // remove typing indicator
-        addMessage('ai', data.answer || 'Sorry, I couldn\'t generate a response.');
-        
-    } catch (error) {
-        console.error('Question error:', error);
-        const typingIndicator = chatMessages.querySelector('.loading');
-        if (typingIndicator) typingIndicator.remove();
-        addMessage('ai', `Sorry, I encountered an error: ${error.message}`);
-    } finally {
-        sendBtn.disabled = false;
-        sendBtn.innerHTML = '<i class="fas fa-paper-plane"></i>';
-    }
-}
-
-
-        function addMessage(type, content) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${type}`;
-            
-            const senderDiv = document.createElement('div');
-            senderDiv.className = 'message-sender';
-            
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'message-content';
-            contentDiv.textContent = content;
-            
-            switch(type) {
-                case 'user':
-                    senderDiv.textContent = 'You';
-                    break;
-                case 'ai':
-                    senderDiv.textContent = 'AI Assistant';
-                    break;
-                case 'system':
-                    senderDiv.textContent = 'System';
-                    break;
-            }
-            
-            messageDiv.appendChild(senderDiv);
-            messageDiv.appendChild(contentDiv);
-            chatMessages.appendChild(messageDiv);
-            
-            // Scroll to bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-            
-            return messageDiv;
-        }
-
-        // Contact form functionality
-        function initializeContactForm() {
-            if (contactForm) {
-                contactForm.addEventListener('submit', handleContactSubmit);
-            }
-        }
-
-        async function handleContactSubmit(e) {
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const formData = new FormData(contactForm);
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            
-            try {
-                submitBtn.disabled = true;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                
-                // Simulate form submission (replace with actual endpoint)
-                await new Promise(resolve => setTimeout(resolve, 2000));
-                
-                // Show success message
-                showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
-                contactForm.reset();
-                
-            } catch (error) {
-                showNotification('Failed to send message. Please try again.', 'error');
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = originalBtnText;
-            }
-        }
-
-        // Utility functions
-        function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.className = `notification ${type}`;
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: ${type === 'success' ? 'rgba(0, 255, 136, 0.9)' : 'rgba(255, 107, 157, 0.9)'};
-                color: white;
-                padding: 1rem 1.5rem;
-                border-radius: 10px;
-                z-index: 10000;
-                font-weight: 500;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-                animation: slideInRight 0.3s ease;
-            `;
-            notification.textContent = message;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.animation = 'slideOutRight 0.3s ease';
-                setTimeout(() => notification.remove(), 300);
-            }, 5000);
-        }
-
-        // Add notification animations to CSS
-        const notificationStyles = document.createElement('style');
-        notificationStyles.textContent = `
-            @keyframes slideInRight {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            
-            @keyframes slideOutRight {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-            
-            .disabled {
-                opacity: 0.5;
-                cursor: not-allowed;
-            }
-        `;
-        document.head.appendChild(notificationStyles);
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(0, 0, 0, 0.98)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-            } else {
-                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
-                navbar.style.boxShadow = 'none';
-            }
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
         });
 
-        // Smooth reveal animations for elements
+        // Scroll reveal animation
         function revealOnScroll() {
             const reveals = document.querySelectorAll('.service-card, .pricing-card, .tech-item');
             
@@ -2011,53 +2214,132 @@ async function uploadKnowledge() {
         }
 
         window.addEventListener('scroll', revealOnScroll);
+        // Initial call to reveal elements already in view
+        window.addEventListener('load', revealOnScroll);
 
-        // Add revealed class styles
-        const revealStyles = document.createElement('style');
-        revealStyles.textContent = `
-            .service-card,
-            .pricing-card,
-            .tech-item {
-                opacity: 0;
-                transform: translateY(30px);
-                transition: all 0.6s ease;
+        // Chatbot functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const chatbotButton = document.querySelector('.chatbot-button');
+            const chatWindow = document.querySelector('.chat-window');
+            const closeChat = document.querySelector('.close-chat');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-button');
+            const chatMessages = document.querySelector('.chat-messages');
+            const typingIndicator = document.querySelector('.typing-indicator');
+            const quickReplies = document.querySelectorAll('.quick-reply');
+            
+            // State variables
+            let isWaitingForResponse = false;
+            
+            // Toggle chat window
+            chatbotButton.addEventListener('click', () => {
+                chatWindow.classList.toggle('active');
+            });
+            
+            closeChat.addEventListener('click', () => {
+                chatWindow.classList.remove('active');
+            });
+            
+            // Send message function
+            function sendMessage() {
+                const message = userInput.value.trim();
+                if (message === '' || isWaitingForResponse) return;
+                
+                // Add user message to chat
+                addMessage(message, 'user');
+                userInput.value = '';
+                
+                // Show typing indicator
+                showTypingIndicator();
+                
+                // Send message to backend
+                sendToBackend(message);
             }
             
-            .service-card.revealed,
-            .pricing-card.revealed,
-            .tech-item.revealed {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        `;
-        document.head.appendChild(revealStyles);
-
-        // Initialize reveal on load
-        document.addEventListener('DOMContentLoaded', revealOnScroll);
-          function initializeContactScroll() {
-            const scrollButtons = document.querySelectorAll('.scroll-to-contact');
+            // Send message on button click
+            sendButton.addEventListener('click', sendMessage);
             
-            scrollButtons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Scroll to contact section
-                    const contactSection = document.querySelector('#contact');
-                    if (contactSection) {
-                        contactSection.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
+            // Send message on Enter key
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+            
+            // Quick reply functionality
+            quickReplies.forEach(reply => {
+                reply.addEventListener('click', () => {
+                    const message = reply.textContent;
+                    addMessage(message, 'user');
+                    showTypingIndicator();
+                    sendToBackend(message);
                 });
             });
-        }
-        
-        // Call this function in your DOMContentLoaded event listener
-        document.addEventListener('DOMContentLoaded', function() {
-            // ... other initialization calls ...
-            initializeContactScroll();
+            
+            // Add message to chat
+            function addMessage(text, sender) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message', sender);
+                messageElement.textContent = text;
+                
+                // Insert before typing indicator
+                chatMessages.insertBefore(messageElement, typingIndicator);
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Show typing indicator
+            function showTypingIndicator() {
+                isWaitingForResponse = true;
+                typingIndicator.style.display = 'flex';
+                sendButton.disabled = true;
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+            
+            // Hide typing indicator
+            function hideTypingIndicator() {
+                isWaitingForResponse = false;
+                typingIndicator.style.display = 'none';
+                sendButton.disabled = false;
+            }
+            
+            // Simulate backend response (replace with actual API call)
+            function sendToBackend(message) {
+                // This is a simulation - replace with actual fetch call to your backend
+                setTimeout(() => {
+                    hideTypingIndicator();
+                    
+                    // Simulate different responses based on message
+                    let response;
+                    if (message.toLowerCase().includes('service')) {
+                        response = "We offer AI-powered automation solutions for various industries including healthcare, education, legal, and marketing. Our services include process automation, AI chatbots, and custom AI solutions tailored to your business needs.";
+                    } else if (message.toLowerCase().includes('help')) {
+                        response = "AI can help your business by automating repetitive tasks, providing 24/7 customer support, analyzing data for insights, and scaling operations without proportional cost increases. Would you like to know more about any specific area?";
+                    } else if (message.toLowerCase().includes('consultation') || message.toLowerCase().includes('book')) {
+                        response = "Great! I can help you book a consultation with our AI experts. Please provide your email address and preferred time, or you can contact us directly at stratamind.official@gmail.com.";
+                    } else {
+                        response = "Thank you for your message. Our AI specialists will get back to you with more detailed information soon. Is there anything specific you'd like to know about our services?";
+                    }
+                    
+                    addMessage(response, 'bot');
+                }, 1500); // Simulate network delay
+            }
         });
+        document.getElementById("contactform").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    const response = await fetch(`${BACKEND_URL}/contact`, {
+        method: "POST",
+        body: formData
+    });
+
+    const result = await response.json();
+    alert(result.message); // show success message
+});
     </script>
 </body>
 </html>
